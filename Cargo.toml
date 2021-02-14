@@ -1,0 +1,23 @@
+[package]
+name = "monte"
+version = "0.1.0"
+authors = ["yngtodd <young.todd.mk@gmail.com>"]
+edition = "2018"
+
+[lib]
+name = "monte"
+crate-type = ["cdylib"]
+
+[dependencies]
+rand = "*"
+num_cpus = "*"
+
+[dependencies.pyo3]
+version = "0.13.1"
+features = ["extension-module"]
+
+[target.x86_64-apple-darwin]
+rustflags = [
+  "-C", "link-arg=-undefined",
+  "-C", "link-arg=dynamic_lookup",
+]
