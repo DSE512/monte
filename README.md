@@ -3,10 +3,19 @@
 
 Approximate Pi through multi-threaded Rust.
 
+#### Install
+
+```
+python setup.py install
+```
+
 
 #### Features
 
 ``````python
-from tok import Vocab
+from monte import monte_carlo_pi
+
+
+pi = monte_carlo_pi(num_iterations=1_000_000)
 
 ``````
