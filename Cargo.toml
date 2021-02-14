@@ -11,6 +11,7 @@ crate-type = ["cdylib"]
 [dependencies]
 rand = "*"
 num_cpus = "*"
+assert_approx_eq = "*"
 
 [dependencies.pyo3]
 version = "0.13.1"

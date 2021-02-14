@@ -49,8 +49,13 @@ fn monte(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
 
 #[cfg(test)]
 mod tests {
+    use assert_approx_eq::assert_approx_eq;
+
+    use super::monte_carlo_pi;
     #[test]
     fn it_works() {
-        assert_eq!(2 + 2, 4);
+        let pi = monte_carlo_pi(1_000_000);
+        let rust_pi = std::f64::consts::PI;
+        assert_approx_eq!(pi, rust_pi, 2f64);
     }
 }
